@@ -1,9 +1,9 @@
 
-from battery import Battery
+from battery.battery import Battery
 
 class NubbinBattery(Battery):
     @property
-    def service_period_as_year():
+    def service_period_as_year(self):
         return 4
 
     def __init__(self, current_date, last_service_date):
@@ -14,6 +14,4 @@ class NubbinBattery(Battery):
         # note:
         # in order to be year accurate, can use dateutil library
         # for now assuming 365 days is one year to service
-        return (self.current_date - self.last_service_date).days >= self.service_period_as_year() * 365
-
-
+        return (self.current_date - self.last_service_date).days >= self.service_period_as_year * 365
