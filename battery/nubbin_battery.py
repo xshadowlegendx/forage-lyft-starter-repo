@@ -4,7 +4,7 @@ from battery import Battery
 class NubinBattery(Battery):
     @property
     def service_period_as_year():
-        return 1
+        return 4
 
     def __init__(self, current_date, last_service_date):
         self.current_date = current_date
