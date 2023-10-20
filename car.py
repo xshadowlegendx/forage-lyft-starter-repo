@@ -2,7 +2,7 @@
 from abc import ABC, abstractmethod
 
 from battery.battery import Battery
-from battery.nubbin_battery import NubinBattery
+from battery.nubbin_battery import NubbinBattery
 from battery.spindler_battery import SpindlerBattery
 from engine.engine import Engine
 from engine.capulet_engine import CapuletEngine
@@ -43,12 +43,12 @@ class CarFactory:
 
     def create_rorschach(current_date, last_service_date, current_mileage, last_service_mileage) -> Car:
         engine = WilloughbyEngine(current_mileage, last_service_mileage)
-        battery = NubinBattery(current_date, last_service_date)
+        battery = NubbinBattery(current_date, last_service_date)
 
         return Car(engine, battery)
 
     def create_thovex(current_date, last_service_date, current_mileage, last_service_mileage) -> Car:
         engine = CapuletEngine(current_mileage, last_service_mileage)
-        battery = NubinBattery(current_date, last_service_date)
+        battery = NubbinBattery(current_date, last_service_date)
 
         return Car(engine, battery)

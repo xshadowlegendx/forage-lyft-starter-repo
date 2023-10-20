@@ -1,7 +1,7 @@
 
 from battery import Battery
 
-class NubinBattery(Battery):
+class NubbinBattery(Battery):
     @property
     def service_period_as_year():
         return 4
