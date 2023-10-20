@@ -4,7 +4,7 @@ from battery.battery import Battery
 class SpindlerBattery(Battery):
     @staticmethod
     def service_period_as_year():
-        return 2
+        return 3
 
     def __init__(self, current_date, last_service_date):
         self.current_date = current_date
