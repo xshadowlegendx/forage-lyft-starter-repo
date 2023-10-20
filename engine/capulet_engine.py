@@ -1,13 +1,13 @@
-from abc import ABC
+from engine import Engine
 
-from car import Car
+class CapuletEngine(Engine):
+    @property
+    def max_mileage_until_service() -> int:
+        return 30000
 
-
-class CapuletEngine(Car, ABC):
-    def __init__(self, last_service_date, current_mileage, last_service_mileage):
-        super().__init__(last_service_date)
+    def __init__(self, current_mileage: int, last_service_mileage: int):
         self.current_mileage = current_mileage
         self.last_service_mileage = last_service_mileage
 
-    def engine_should_be_serviced(self):
-        return self.current_mileage - self.last_service_mileage > 30000
+    def needs_service(self) -> bool:
+        return self.current_mileage - self.last_service_mileage > self.max_mileage_until_service()
