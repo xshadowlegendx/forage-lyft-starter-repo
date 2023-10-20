@@ -2,8 +2,8 @@
 from battery.battery import Battery
 
 class SpindlerBattery(Battery):
-    @property
-    def service_period_as_year(self):
+    @staticmethod
+    def service_period_as_year():
         return 2
 
     def __init__(self, current_date, last_service_date):
@@ -14,4 +14,4 @@ class SpindlerBattery(Battery):
         # note:
         # in order to be year accurate, can use dateutil library
         # for now assuming 365 days is one year to service
-        return (self.current_date - self.last_service_date).days >= self.service_period_as_year * 365
+        return (self.current_date - self.last_service_date).days >= self.service_period_as_year() * 365
